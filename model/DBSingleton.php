@@ -8,7 +8,7 @@ class DBSingleton {
 
 	public static function get_db_connection(): PDO {
 		if (empty(self::$db_connection)) {
-			self::$db_connection = new PDO('mysql:host=' . DB_HOST . ';port=3306;dbname=' . DB_NAME . ';charset=utf8mb4', DB_USER, DB_PASSWORD);
+			self::$db_connection = new PDO('mysql:host=' . DB_HOST . ';port=' . DB_PORT . ';dbname=' . DB_NAME . ';charset=utf8mb4', DB_USER, DB_PASSWORD);
 		}
 
 		return self::$db_connection;

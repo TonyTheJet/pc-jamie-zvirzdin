@@ -2,3 +2,4 @@
 /config/development/
 
 config.inc
+error_log

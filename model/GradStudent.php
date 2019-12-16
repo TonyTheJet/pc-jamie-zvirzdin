@@ -16,17 +16,17 @@ class GradStudent {
 	}
 
     /**
-     * @param DBSingleton $db
+     * @param PDO $db
      * @return StudentSectionData[]
      */
-	public function fetch_sections(DBSingleton $db, int $semester_id): array {
+	public function fetch_sections(PDO $db, int $semester_id): array {
         $sql = "
             SELECT gss.sectionNumber, email, courseDataJSON
             FROM GradStudentSections gss 
             INNER JOIN SemesterSections SS on gss.sectionNumber = SS.sectionNumber
             WHERE email = :email AND SS.semesterId = :semester_id
         ";
-        $stmt = $db::get_db_connection()->prepare($sql);
+        $stmt = $db->prepare($sql);
         $return_arr = [];
         if ($stmt && $stmt->execute([':email' => $this->email, ':semester_id' => $semester_id])){
             $rows = $stmt->fetchAll();

@@ -1,6 +1,7 @@
 <?php
-
+session_start();
 require_once('config.inc');
+require_once ('app.php');
 
 // headers sent
 require_once('view/templates/header.phtml');

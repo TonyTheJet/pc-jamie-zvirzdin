@@ -1,1 +1,35 @@
-login form here
+<form action="" method="post">
+    <input type="hidden" name="action" value="authenticate-student" />
+    <h2>Course Login</h2>
+    <div class="form-group">
+        <div class="col col-xs-12 col-md-8">
+            <label for="student-email">Email</label>
+            <input
+                    class="form-control"
+                    id="student-email"
+                    name="email"
+                    placeholder="example@school.edu"
+                    required
+                    type="email"
+                    value="<?php if (!empty($_REQUEST['email'])) { echo $_REQUEST['email']; }; ?>"
+            />
+        </div>
+        <div class="col col-xs-12 col-md-8 mt-3">
+            <label for="section-number">Section Number</label>
+            <input
+                    class="form-control"
+                    id="section-number"
+                    maxlength="32"
+                    minlength="3"
+                    name="section_number"
+                    placeholder="101"
+                    required
+                    type="text"
+                    value="<?php if (!empty($_REQUEST['section_number'])) { echo $_REQUEST['section_number']; }; ?>"
+            />
+        </div>
+        <div class="col col-xs-12 col-md-8 mt-3">
+            <button class="btn btn-primary" type="submit" id="submit-login" name="submit_login">Log In</button>
+        </div>
+    </div>
+</form>

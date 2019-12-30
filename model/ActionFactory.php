@@ -5,7 +5,8 @@ class ActionFactory {
         switch ($action){
             case 'authenticate-student':
                 return new ActionAuthenticateStudent($session);
-                break;
+            case 'logout':
+                return new ActionLogOutUser($session);
             default:
                 return new ActionUnsupportedAction();
         }

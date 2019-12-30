@@ -80,6 +80,15 @@ class UserSession {
             return false;
         }
     }
+
+    public function clear_session(): void {
+        $this->grad_student = null;
+        $this->is_admin = false;
+        $this->section_data_arr = [];
+        unset($_SESSION[self::SESSION_KEY_GRAD_STUDENT]);
+        unset($_SESSION[self::SESSION_KEY_IS_ADMIN]);
+        unset($_SESSION[self::SESSION_KEY_SECTION_DATA_ARR]);
+    }
     // end public functions
 
     // private functions

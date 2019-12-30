@@ -11,6 +11,11 @@ class ActionUnsupportedAction implements ActionInterface {
         return false;
     }
 
+    public function get_redirect(): ?string
+    {
+        return null;
+    }
+
     public function process_action(array $input_data): void
     {
         // nothing to do

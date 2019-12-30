@@ -1,1 +1,12 @@
-grad student template here
+<div class="row">
+    <div class="col col-12">
+        <div class="float-left">
+            Hello, <?php echo UserSessionSingleton::get_user_session(DBSingleton::get_db_connection())->get_grad_student()->get_name(); ?>!
+        </div>
+        <div class="float-right"><a class="btn btn-info" href="/?action=logout">Log Out</a></div>
+    </div>
+</div>
+<h1>My Game Plan</h1>
+<div id="game-plan-app">
+    ReactJS app will appear here with game plan
+</div>

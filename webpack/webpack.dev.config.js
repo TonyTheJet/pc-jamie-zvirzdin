@@ -4,7 +4,7 @@ const root_path = 'C:\\Users\\tanderson\\Documents\\virtual-machines\\silhouette
 
 module.exports = {
     entry: [
-        root_path + "\\index.js"
+        root_path + "\\game-plan.js"
     ],
     module: {
         rules: [{
